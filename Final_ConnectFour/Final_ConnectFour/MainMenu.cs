@@ -16,5 +16,10 @@ namespace Final_ConnectFour
         {
             InitializeComponent();
         }
+
+        private void btn_exitGame_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
