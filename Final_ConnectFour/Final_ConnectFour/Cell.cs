@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Final_ConnectFour
 {
@@ -11,23 +12,20 @@ namespace Final_ConnectFour
         //Variables
         private int xCord;
         private int yCord;
-        private char val;
+        Button btn;
 
 
         //Default Constructor
         public Cell()
         {
             Console.WriteLine("New Cell Created");
-
-            //Probably add something relating to the "val" later
         }
         //Setter Constructor
-        public Cell(int x, int y)
+        public Cell(int x, int y, Button b)
         {
             xCord = x;
             yCord = y;
-
-            //Probably add something relating to the "val" later
+            b = btn;
         }
 
         //============================
@@ -40,9 +38,9 @@ namespace Final_ConnectFour
         {
             return yCord;
         }
-        public char getCellVal()
+        public Button getButton()
         {
-            return val;
+            return btn;
         }
 
         //===========================
@@ -55,9 +53,9 @@ namespace Final_ConnectFour
         {
             yCord= y;
         }
-        public void setCellVal(char v)
+        public void setButton(Button b)
         {
-            val = v;
+            btn = b;
         }
     }
 }

@@ -12,9 +12,13 @@ namespace Final_ConnectFour
 {
     public partial class GameScreen : Form
     {
+        private Board gameBoard;
+
         public GameScreen()
         {
             InitializeComponent();
+            gameBoard=new Board();
+            
         }
     }
 }
