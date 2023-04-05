@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace Final_ConnectFour
 {
@@ -47,26 +48,22 @@ namespace Final_ConnectFour
 
                 statsWriter.WriteStartDocument();
 
-                statsWriter.WriteStartElement("playerWinCount");
-                statsWriter.WriteValue(0);
 
-                statsWriter.WriteStartElement("computerWinCount");
-                statsWriter.WriteValue(0);
+                statsWriter.WriteStartElement("Statistics");
 
-                statsWriter.WriteStartElement("gameTieCount");
-                statsWriter.WriteValue(0);
+                statsWriter.WriteElementString("playerWinCount", "0");
+                statsWriter.WriteElementString("computerWinCount", "0");
+                statsWriter.WriteElementString("gameTieCount", "0");
+                statsWriter.WriteElementString("gamesPlayedCount", "0");
+                statsWriter.WriteElementString("playerWinPercentage", "0");
+                statsWriter.WriteElementString("computerWinPercentage", "0");
 
-                statsWriter.WriteStartElement("gamesPlayedCount");
-                statsWriter.WriteValue(0);
-
-                statsWriter.WriteStartElement("playerWinPercentage");
-                statsWriter.WriteValue(0);
-
-                statsWriter.WriteStartElement("computerWinPercentage");
-                statsWriter.WriteValue(0);
+                statsWriter.WriteEndElement();
 
                 statsWriter.WriteEndDocument();
                 statsWriter.Close();
+
+                initialize();
             }
             
         }
