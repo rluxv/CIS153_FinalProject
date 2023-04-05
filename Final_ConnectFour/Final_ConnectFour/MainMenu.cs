@@ -21,5 +21,15 @@ namespace Final_ConnectFour
         {
             Application.Exit();
         }
+
+        private void btn_viewStats_Click(object sender, EventArgs e)
+        {
+            Stats st = new Stats();
+            st.initialize();
+
+            StatsWindow statsWindow = new StatsWindow();
+            statsWindow.Show();
+
+        }
     }
 }

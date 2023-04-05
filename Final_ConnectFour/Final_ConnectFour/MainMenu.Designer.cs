@@ -42,7 +42,7 @@
             this.btn_startSnglPlyr.BackColor = System.Drawing.Color.RoyalBlue;
             this.btn_startSnglPlyr.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_startSnglPlyr.Location = new System.Drawing.Point(211, 101);
-            this.btn_startSnglPlyr.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_startSnglPlyr.Margin = new System.Windows.Forms.Padding(4);
             this.btn_startSnglPlyr.Name = "btn_startSnglPlyr";
             this.btn_startSnglPlyr.Size = new System.Drawing.Size(220, 49);
             this.btn_startSnglPlyr.TabIndex = 1;
@@ -69,7 +69,7 @@
             this.btn_startTwoPlyr.BackColor = System.Drawing.Color.RoyalBlue;
             this.btn_startTwoPlyr.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_startTwoPlyr.Location = new System.Drawing.Point(211, 179);
-            this.btn_startTwoPlyr.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_startTwoPlyr.Margin = new System.Windows.Forms.Padding(4);
             this.btn_startTwoPlyr.Name = "btn_startTwoPlyr";
             this.btn_startTwoPlyr.Size = new System.Drawing.Size(220, 49);
             this.btn_startTwoPlyr.TabIndex = 2;
@@ -82,12 +82,13 @@
             this.btn_viewStats.BackColor = System.Drawing.Color.RoyalBlue;
             this.btn_viewStats.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_viewStats.Location = new System.Drawing.Point(211, 259);
-            this.btn_viewStats.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_viewStats.Margin = new System.Windows.Forms.Padding(4);
             this.btn_viewStats.Name = "btn_viewStats";
             this.btn_viewStats.Size = new System.Drawing.Size(220, 49);
             this.btn_viewStats.TabIndex = 3;
             this.btn_viewStats.Text = "View Statistics";
             this.btn_viewStats.UseVisualStyleBackColor = false;
+            this.btn_viewStats.Click += new System.EventHandler(this.btn_viewStats_Click);
             // 
             // btn_exitGame
             // 
@@ -95,7 +96,7 @@
             this.btn_exitGame.BackColor = System.Drawing.Color.RoyalBlue;
             this.btn_exitGame.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_exitGame.Location = new System.Drawing.Point(211, 343);
-            this.btn_exitGame.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_exitGame.Margin = new System.Windows.Forms.Padding(4);
             this.btn_exitGame.Name = "btn_exitGame";
             this.btn_exitGame.Size = new System.Drawing.Size(220, 49);
             this.btn_exitGame.TabIndex = 4;
@@ -116,7 +117,7 @@
             this.Controls.Add(this.btn_startSnglPlyr);
             this.Controls.Add(this.lbl_c4name);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "MainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
