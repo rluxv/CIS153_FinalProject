@@ -13,19 +13,25 @@ namespace Final_ConnectFour
         private int xCord;
         private int yCord;
         Button btn;
+        
+        // 0 equals no player, 1 equals player 1, 2 equals player 2/ai (this will be used to determine the winner)
+        int player;
 
 
         //Default Constructor
         public Cell()
         {
             Console.WriteLine("New Cell Created");
+            player = 0;
         }
         //Setter Constructor
-        public Cell(int x, int y, Button b)
+        public Cell(int x, int y, Button b, int player)
         {
             xCord = x;
             yCord = y;
             b = btn;
+            this.player = player;
+            Console.WriteLine("New Cell Created");
         }
 
         //============================
@@ -43,6 +49,12 @@ namespace Final_ConnectFour
             return btn;
         }
 
+        public int getPlayer()
+        {
+            return player;
+        }
+
+
         //===========================
         //Setters
         public void setCordX(int x)
@@ -56,6 +68,11 @@ namespace Final_ConnectFour
         public void setButton(Button b)
         {
             btn = b;
+        }
+
+        public void setPlayer(int player)
+        {
+            this.player = player;
         }
     }
 }

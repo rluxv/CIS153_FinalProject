@@ -31,5 +31,11 @@ namespace Final_ConnectFour
             statsWindow.Show();
 
         }
+
+        private void btn_startSnglPlyr_Click(object sender, EventArgs e)
+        {
+            Board_2Player board = new Board_2Player();
+            board.Show();
+        }
     }
 }
