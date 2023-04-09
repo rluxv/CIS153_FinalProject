@@ -45,7 +45,7 @@ namespace Final_ConnectFour
                 //Console.WriteLine(y);
 
                 Cell c = board.getCell(row, col);
-                Console.WriteLine("Clicked on " + c.getCordX() + ", " + c.getCordY());
+                Console.WriteLine("Clicked on " + c.getCordCol() + ", " + c.getCordRow());
             }
         }
 

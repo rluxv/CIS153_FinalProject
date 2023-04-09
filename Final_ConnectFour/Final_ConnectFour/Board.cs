@@ -33,9 +33,9 @@ namespace Final_ConnectFour
             return numCols;
         }
         //Maybe I want to be able to get an individual cell from the gameboard given row and col
-        public Cell getCell(int x, int y)
+        public Cell getCell(int col, int row)
         {
-            return gameBoard[x, y];
+            return gameBoard[col, row];
         }
 
         //Maybe we want to be able to view the entire board not just a cell
@@ -50,7 +50,7 @@ namespace Final_ConnectFour
         {
             //the only reason I can do this is because I am going to make sure that I 
             //set the row and col of a cell before I add it to the board
-            gameBoard[cell.getCordX(), cell.getCordY()] = cell;
+            gameBoard[cell.getCordCol(), cell.getCordRow()] = cell;
         }
 
         public void initialize()
@@ -62,8 +62,8 @@ namespace Final_ConnectFour
                 for(int row = 0; row < numRows; row++)
                 {
                     gameBoard[col, row] = new Cell();
-                    gameBoard[col, row].setCordX(col);
-                    gameBoard[col, row].setCordY(row);
+                    gameBoard[col, row].setCordCol(col);
+                    gameBoard[col, row].setCordRow(row);
                 }
                 
             }

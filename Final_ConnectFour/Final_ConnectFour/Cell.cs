@@ -10,8 +10,8 @@ namespace Final_ConnectFour
     internal class Cell
     {
         //Variables
-        private int xCord;
-        private int yCord;
+        private int colCord;
+        private int rowCord;
         Button btn;
         
         // 0 equals no player, 1 equals player 1, 2 equals player 2/ai (this will be used to determine the winner)
@@ -25,10 +25,10 @@ namespace Final_ConnectFour
             player = 0;
         }
         //Setter Constructor
-        public Cell(int x, int y, Button b, int player)
+        public Cell(int col, int row, Button b, int player)
         {
-            xCord = x;
-            yCord = y;
+            colCord = col;
+            rowCord = row;
             b = btn;
             this.player = player;
             Console.WriteLine("New Cell Created");
@@ -36,13 +36,13 @@ namespace Final_ConnectFour
 
         //============================
         //Getters
-        public int getCordX()
+        public int getCordCol()
         {
-            return xCord;
+            return colCord;
         }
-        public int getCordY()
+        public int getCordRow()
         {
-            return yCord;
+            return rowCord;
         }
         public Button getButton()
         {
@@ -57,13 +57,13 @@ namespace Final_ConnectFour
 
         //===========================
         //Setters
-        public void setCordX(int x)
+        public void setCordCol(int x)
         {
-            xCord = x;
+            colCord = x;
         }
-        public void setCordY(int y)
+        public void setCordRow(int y)
         {
-            yCord= y;
+            rowCord = y;
         }
         public void setButton(Button b)
         {
