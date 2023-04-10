@@ -14,12 +14,14 @@ namespace Final_ConnectFour
     {
 
         Board board;
+        MainMenu mm;
 
-        public Board_2Player()
+        public Board_2Player(MainMenu mainMenu)
         {
             InitializeComponent();
             board = new Board();
             board.initialize();
+            mm = mainMenu;
         }
 
         private void Board_2Player_Load(object sender, EventArgs e)
@@ -52,6 +54,11 @@ namespace Final_ConnectFour
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void form_close(object sender, FormClosedEventArgs e)
+        {
+            mm.Show();
         }
     }
 }

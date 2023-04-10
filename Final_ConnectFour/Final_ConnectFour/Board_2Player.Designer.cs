@@ -577,6 +577,7 @@
             this.Name = "Board_2Player";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Board_2Player";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.form_close);
             this.Load += new System.EventHandler(this.Board_2Player_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -73,6 +73,7 @@
             this.btn_startTwoPlyr.TabIndex = 2;
             this.btn_startTwoPlyr.Text = "Start 2 Player Game";
             this.btn_startTwoPlyr.UseVisualStyleBackColor = false;
+            this.btn_startTwoPlyr.Click += new System.EventHandler(this.btn_startTwoPlyr_Click);
             // 
             // btn_viewStats
             // 
