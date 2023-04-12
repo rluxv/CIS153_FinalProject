@@ -19,8 +19,6 @@ namespace Final_ConnectFour
         private const int numRows = 6;
         
         private Cell[,] gameBoard = new Cell[numCols, numRows];
-        bool gameOver;
-        bool playerTurn;
 
 
         //Getters

@@ -13,24 +13,26 @@ namespace Final_ConnectFour
         private int colCord;
         private int rowCord;
         Button btn;
-        
-        // 0 equals no player, 1 equals player 1, 2 equals player 2/ai (this will be used to determine the winner)
-        int player;
+        //Token refers to whether or not the cell was already selected/has a token in it
+        //0 is no token, 1 is p1 token, 2 is p2 token
+        private int token;
+
+
+        //I got rid of the "player" variable here and gave it its own class
 
 
         //Default Constructor
         public Cell()
         {
             Console.WriteLine("New Cell Created");
-            player = 0;
         }
         //Setter Constructor
-        public Cell(int col, int row, Button b, int player)
+        public Cell(int col, int row, Button b, int tok)
         {
             colCord = col;
             rowCord = row;
-            b = btn;
-            this.player = player;
+            btn=b;
+            token = tok;
             Console.WriteLine("New Cell Created");
         }
 
@@ -49,9 +51,9 @@ namespace Final_ConnectFour
             return btn;
         }
 
-        public int getPlayer()
+        public int getToken()
         {
-            return player;
+            return token;
         }
 
 
@@ -70,9 +72,9 @@ namespace Final_ConnectFour
             btn = b;
         }
 
-        public void setPlayer(int player)
+        public void setToken(int tok)
         {
-            this.player = player;
+            token = tok;
         }
     }
 }
