@@ -40,14 +40,26 @@ namespace Final_ConnectFour
             {
                 Button btn = (Button)sender;
                 string txt = btn.Text;
-                int row = int.Parse(txt.Substring(0, 1));
-                int col = int.Parse(txt.Substring(3));
 
-                //Console.WriteLine(x);
-                //Console.WriteLine(y);
 
-                Cell c = board.getCell(row, col);
+
+                int col = int.Parse(txt.Substring(0, 1));
+                int row = int.Parse(txt.Substring(3));
+
+                Cell c = board.getCell(col, row);
                 Console.WriteLine("Clicked on " + c.getCordCol() + ", " + c.getCordRow());
+
+                if(columnFull(col))
+                {
+                    Console.WriteLine("Column full, doing nothing.");
+                }
+                else
+                {
+                    Console.WriteLine("Placing a disc.");
+                    // temporary code below, only places disc for player 1 as we do not yet have a way to set whos turn it is, discs also do not fall to the bottom, and discs can be overwritten
+                    placeDisc(1, row, col, btn);
+
+                }
             }
         }
 
@@ -59,6 +71,35 @@ namespace Final_ConnectFour
         private void form_close(object sender, FormClosedEventArgs e)
         {
             mm.Show();
+        }
+
+        public bool columnFull(int col)
+        {
+            int n = 0;
+            for(int i = 0; i < 6; i++)
+            {
+                if (board.getCell(col, i).getPlayer() == 1 || board.getCell(col, i).getPlayer() == 2)
+                {
+                    n++;
+                }
+            }
+            if (n == 6) return true;
+
+            return false;
+        }
+
+        public void placeDisc(int player, int row, int col, Button btn)
+        {
+            if(player == 1)
+            {
+                board.getCell(col, row).setPlayer(1);
+                btn.BackColor = Color.Yellow;
+            }
+            else if(player == 2)
+            {
+                board.getCell(col, row).setPlayer(2);
+                btn.BackColor = Color.Red;
+            }
         }
     }
 }
