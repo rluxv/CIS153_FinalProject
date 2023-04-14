@@ -16,6 +16,7 @@ namespace Final_ConnectFour
         Board board;
         MainMenu mm;
         Player player;
+        int turns;
 
         public Board_2Player(MainMenu mainMenu)
         {
@@ -25,6 +26,9 @@ namespace Final_ConnectFour
             mm = mainMenu;
             player = new Player();
             player.setPlayerTurn(1);
+            turns = 1;
+            refreshSidebar();
+            
         }
 
         private void Board_2Player_Load(object sender, EventArgs e)
@@ -35,6 +39,28 @@ namespace Final_ConnectFour
         {
             Application.Exit();
         }
+
+        private void refreshSidebar()
+        {
+            if(player.getPlayerTurn() == 1)
+            {
+                lbl_p1Turn.ForeColor = Color.DarkGreen;
+                lbl_p1Turn.Font = new Font(lbl_p1Turn.Font, FontStyle.Bold);
+
+                lbl_p2Turn.ForeColor = Color.Gray;
+                lbl_p2Turn.Font = new Font(lbl_p1Turn.Font, FontStyle.Regular);
+            }
+            else if (player.getPlayerTurn() == 2)
+            {
+                lbl_p2Turn.ForeColor = Color.DarkGreen;
+                lbl_p2Turn.Font = new Font(lbl_p1Turn.Font, FontStyle.Bold);
+
+                lbl_p1Turn.ForeColor = Color.Gray;
+                lbl_p1Turn.Font = new Font(lbl_p1Turn.Font, FontStyle.Regular);
+            }
+            lbl_turnNum.Text = "Turn " + turns;
+        }
+
         private void btn_click(object sender, EventArgs e)
         {
             if (sender is Button)
@@ -72,6 +98,7 @@ namespace Final_ConnectFour
                             player.setPlayerTurn(1);
                             Console.WriteLine("Player 1 Turn");
                         }
+                        turns++;
                     }
                     ////Goes down and checks every cell below it if there is a token within the cell
                     ////Places token down as far as possible
@@ -110,7 +137,7 @@ namespace Final_ConnectFour
                     Console.WriteLine("ERROR 404: Token not found");
                 }
 
-
+                refreshSidebar();
 
             }
         }
