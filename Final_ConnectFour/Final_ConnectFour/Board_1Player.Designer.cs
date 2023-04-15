@@ -87,6 +87,7 @@
             this.btn_exit.TabIndex = 134;
             this.btn_exit.Text = "End Game";
             this.btn_exit.UseVisualStyleBackColor = true;
+            this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
             // 
             // panel1
             // 
@@ -568,7 +569,7 @@
             this.Controls.Add(this.btn_02);
             this.Controls.Add(this.btn_01);
             this.Controls.Add(this.btn_00);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "GameScreen";
             this.Text = "Connect 4 Game Menu";
             this.panel1.ResumeLayout(false);

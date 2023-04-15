@@ -34,7 +34,16 @@ namespace Final_ConnectFour
 
         private void btn_startSnglPlyr_Click(object sender, EventArgs e)
         {
-            
+            GameScreen board = new GameScreen();
+            this.Hide();
+            if (board.ShowDialog() == DialogResult.OK)
+            {
+                this.Show();
+            }
+            else
+            {
+                this.Close();
+            }
         }
 
         private void btn_startTwoPlyr_Click(object sender, EventArgs e)

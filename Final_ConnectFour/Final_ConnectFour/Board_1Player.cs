@@ -13,12 +13,26 @@ namespace Final_ConnectFour
     public partial class GameScreen : Form
     {
         private Board gameBoard;
+        private bool isPlayer_turn;
 
         public GameScreen()
         {
             InitializeComponent();
-            gameBoard=new Board();
-            
+            gameBoard = new Board();
+            isPlayer_turn = true;
+
         }
+
+
+
+        private void btn_exit_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
+
+
+
+
     }
 }

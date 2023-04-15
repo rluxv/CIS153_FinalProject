@@ -16,5 +16,10 @@ namespace Final_ConnectFour
         {
             InitializeComponent();
         }
+
+        private void StatsWindow_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

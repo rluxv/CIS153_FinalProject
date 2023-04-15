@@ -17,6 +17,7 @@ namespace Final_ConnectFour
         MainMenu mm;
         Player player;
         int turns;
+        private bool isPlayer1_turn;
 
         public Board_2Player(MainMenu mainMenu)
         {
@@ -24,6 +25,7 @@ namespace Final_ConnectFour
             board = new Board();
             board.initialize();
             mm = mainMenu;
+            isPlayer1_turn = true;
             player = new Player();
             player.setPlayerTurn(1);
             turns = 1;
