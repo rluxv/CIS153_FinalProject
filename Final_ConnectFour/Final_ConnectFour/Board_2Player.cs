@@ -73,7 +73,6 @@ namespace Final_ConnectFour
                 {
                     if(board.getCell(c, r).getToken() == p)
                     {
-                        Console.WriteLine("token found: " + c + ", " + r);
                         count++;
                     }
                     else
