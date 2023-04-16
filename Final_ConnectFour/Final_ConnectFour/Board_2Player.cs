@@ -74,36 +74,70 @@ namespace Final_ConnectFour
             lbl_turnNum.Text = "Turn " + turns;
         }
 
+
         private bool checkWin(int p)
         {
             // vertical check
-            for(int c = 0; c < 7; c++)
+            for (int c = 0; c < 7; c++)
             {
                 int count = 0;
-                for(int r = 0; r < 6; r++)
+                for (int r = 0; r < 6; r++)
                 {
-                    if(board.getCell(c, r).getToken() == p)
+                    if (board.getCell(c, r).getToken() == p)
                     {
                         Console.WriteLine("token found: " + c + ", " + r);
                         count++;
-                        Console.WriteLine("Count: " + count);
-                        if (count == 4)
-                        {
-                            return true;
-                        }
                     }
                     else
                     {
                         count = 0;
                     }
                 }
-                
+                if (count == 4)
+                {
+                    return true;
+                }
             }
 
-            // vertical check
+            // horizontal check
+            for (int r = 0; r < 6; r++)
+            {
+                int count = 0;
+                for (int c = 0; c < 7; c++)
+                {
+                    if (board.getCell(c, r).getToken() == p)
+                    {
+                        Console.WriteLine("token found: " + c + ", " + r);
+                        count++;
+                    }
+                    else
+                    {
+                        count = 0;
+                    }
+                    if (count == 4)
+                    {
+                        return true;
+                    }
+                }
+            }
 
             // diagonal check
-
+            for (int r = 0; r < 3; r++)
+            {
+                for (int c = 0; c < 7; c++)
+                {
+                    if (board.getCell(c, r).getToken() == p && board.getCell(c + 1, r + 1).getToken() == p &&
+                        board.getCell(c + 2, r + 2).getToken() == p && board.getCell(c + 3, r + 3).getToken() == p)
+                    {
+                        return true;
+                    }
+                    if (board.getCell(c, r + 3).getToken() == p && board.getCell(c + 1, r + 2).getToken() == p &&
+                        board.getCell(c + 2, r + 1).getToken() == p && board.getCell(c + 3, r).getToken() == p)
+                    {
+                        return true;
+                    }
+                }
+            }
 
             return false;
         }
