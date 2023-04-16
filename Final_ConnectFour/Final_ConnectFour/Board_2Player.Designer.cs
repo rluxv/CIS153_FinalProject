@@ -72,16 +72,20 @@
             this.btn_60 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbl_p2Turn = new System.Windows.Forms.Label();
+            this.lbl_p1Turn = new System.Windows.Forms.Label();
             this.lbl_turnNum = new System.Windows.Forms.Label();
             this.btn_exit = new System.Windows.Forms.Button();
-            this.lbl_p1Turn = new System.Windows.Forms.Label();
-            this.lbl_p2Turn = new System.Windows.Forms.Label();
+            this.panel_gamePanel = new System.Windows.Forms.Panel();
+            this.lbl_winner = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            this.panel_gamePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_00
             // 
-            this.btn_00.Location = new System.Drawing.Point(299, 32);
+            this.btn_00.Location = new System.Drawing.Point(45, 23);
             this.btn_00.Name = "btn_00";
             this.btn_00.Size = new System.Drawing.Size(100, 100);
             this.btn_00.TabIndex = 0;
@@ -91,7 +95,7 @@
             // 
             // btn_01
             // 
-            this.btn_01.Location = new System.Drawing.Point(299, 138);
+            this.btn_01.Location = new System.Drawing.Point(45, 129);
             this.btn_01.Name = "btn_01";
             this.btn_01.Size = new System.Drawing.Size(100, 100);
             this.btn_01.TabIndex = 1;
@@ -101,7 +105,7 @@
             // 
             // btn_02
             // 
-            this.btn_02.Location = new System.Drawing.Point(299, 244);
+            this.btn_02.Location = new System.Drawing.Point(45, 235);
             this.btn_02.Name = "btn_02";
             this.btn_02.Size = new System.Drawing.Size(100, 100);
             this.btn_02.TabIndex = 2;
@@ -111,7 +115,7 @@
             // 
             // btn_03
             // 
-            this.btn_03.Location = new System.Drawing.Point(299, 350);
+            this.btn_03.Location = new System.Drawing.Point(45, 341);
             this.btn_03.Name = "btn_03";
             this.btn_03.Size = new System.Drawing.Size(100, 100);
             this.btn_03.TabIndex = 3;
@@ -121,7 +125,7 @@
             // 
             // btn_04
             // 
-            this.btn_04.Location = new System.Drawing.Point(299, 456);
+            this.btn_04.Location = new System.Drawing.Point(45, 447);
             this.btn_04.Name = "btn_04";
             this.btn_04.Size = new System.Drawing.Size(100, 100);
             this.btn_04.TabIndex = 4;
@@ -131,7 +135,7 @@
             // 
             // btn_05
             // 
-            this.btn_05.Location = new System.Drawing.Point(299, 562);
+            this.btn_05.Location = new System.Drawing.Point(45, 553);
             this.btn_05.Name = "btn_05";
             this.btn_05.Size = new System.Drawing.Size(100, 100);
             this.btn_05.TabIndex = 5;
@@ -141,7 +145,7 @@
             // 
             // btn_15
             // 
-            this.btn_15.Location = new System.Drawing.Point(405, 562);
+            this.btn_15.Location = new System.Drawing.Point(151, 553);
             this.btn_15.Name = "btn_15";
             this.btn_15.Size = new System.Drawing.Size(100, 100);
             this.btn_15.TabIndex = 11;
@@ -151,7 +155,7 @@
             // 
             // btn_14
             // 
-            this.btn_14.Location = new System.Drawing.Point(405, 456);
+            this.btn_14.Location = new System.Drawing.Point(151, 447);
             this.btn_14.Name = "btn_14";
             this.btn_14.Size = new System.Drawing.Size(100, 100);
             this.btn_14.TabIndex = 10;
@@ -161,7 +165,7 @@
             // 
             // btn_13
             // 
-            this.btn_13.Location = new System.Drawing.Point(405, 350);
+            this.btn_13.Location = new System.Drawing.Point(151, 341);
             this.btn_13.Name = "btn_13";
             this.btn_13.Size = new System.Drawing.Size(100, 100);
             this.btn_13.TabIndex = 9;
@@ -171,7 +175,7 @@
             // 
             // btn_12
             // 
-            this.btn_12.Location = new System.Drawing.Point(405, 244);
+            this.btn_12.Location = new System.Drawing.Point(151, 235);
             this.btn_12.Name = "btn_12";
             this.btn_12.Size = new System.Drawing.Size(100, 100);
             this.btn_12.TabIndex = 8;
@@ -181,7 +185,7 @@
             // 
             // btn_11
             // 
-            this.btn_11.Location = new System.Drawing.Point(405, 138);
+            this.btn_11.Location = new System.Drawing.Point(151, 129);
             this.btn_11.Name = "btn_11";
             this.btn_11.Size = new System.Drawing.Size(100, 100);
             this.btn_11.TabIndex = 7;
@@ -191,7 +195,7 @@
             // 
             // btn_10
             // 
-            this.btn_10.Location = new System.Drawing.Point(405, 32);
+            this.btn_10.Location = new System.Drawing.Point(151, 23);
             this.btn_10.Name = "btn_10";
             this.btn_10.Size = new System.Drawing.Size(100, 100);
             this.btn_10.TabIndex = 6;
@@ -201,7 +205,7 @@
             // 
             // btn_25
             // 
-            this.btn_25.Location = new System.Drawing.Point(511, 562);
+            this.btn_25.Location = new System.Drawing.Point(257, 553);
             this.btn_25.Name = "btn_25";
             this.btn_25.Size = new System.Drawing.Size(100, 100);
             this.btn_25.TabIndex = 17;
@@ -211,7 +215,7 @@
             // 
             // btn_24
             // 
-            this.btn_24.Location = new System.Drawing.Point(511, 456);
+            this.btn_24.Location = new System.Drawing.Point(257, 447);
             this.btn_24.Name = "btn_24";
             this.btn_24.Size = new System.Drawing.Size(100, 100);
             this.btn_24.TabIndex = 16;
@@ -221,7 +225,7 @@
             // 
             // btn_23
             // 
-            this.btn_23.Location = new System.Drawing.Point(511, 350);
+            this.btn_23.Location = new System.Drawing.Point(257, 341);
             this.btn_23.Name = "btn_23";
             this.btn_23.Size = new System.Drawing.Size(100, 100);
             this.btn_23.TabIndex = 15;
@@ -231,7 +235,7 @@
             // 
             // btn_22
             // 
-            this.btn_22.Location = new System.Drawing.Point(511, 244);
+            this.btn_22.Location = new System.Drawing.Point(257, 235);
             this.btn_22.Name = "btn_22";
             this.btn_22.Size = new System.Drawing.Size(100, 100);
             this.btn_22.TabIndex = 14;
@@ -241,7 +245,7 @@
             // 
             // btn_21
             // 
-            this.btn_21.Location = new System.Drawing.Point(511, 138);
+            this.btn_21.Location = new System.Drawing.Point(257, 129);
             this.btn_21.Name = "btn_21";
             this.btn_21.Size = new System.Drawing.Size(100, 100);
             this.btn_21.TabIndex = 13;
@@ -251,7 +255,7 @@
             // 
             // btn_20
             // 
-            this.btn_20.Location = new System.Drawing.Point(511, 32);
+            this.btn_20.Location = new System.Drawing.Point(257, 23);
             this.btn_20.Name = "btn_20";
             this.btn_20.Size = new System.Drawing.Size(100, 100);
             this.btn_20.TabIndex = 12;
@@ -261,7 +265,7 @@
             // 
             // btn_35
             // 
-            this.btn_35.Location = new System.Drawing.Point(617, 562);
+            this.btn_35.Location = new System.Drawing.Point(363, 553);
             this.btn_35.Name = "btn_35";
             this.btn_35.Size = new System.Drawing.Size(100, 100);
             this.btn_35.TabIndex = 23;
@@ -271,7 +275,7 @@
             // 
             // btn_34
             // 
-            this.btn_34.Location = new System.Drawing.Point(617, 456);
+            this.btn_34.Location = new System.Drawing.Point(363, 447);
             this.btn_34.Name = "btn_34";
             this.btn_34.Size = new System.Drawing.Size(100, 100);
             this.btn_34.TabIndex = 22;
@@ -281,7 +285,7 @@
             // 
             // btn_33
             // 
-            this.btn_33.Location = new System.Drawing.Point(617, 350);
+            this.btn_33.Location = new System.Drawing.Point(363, 341);
             this.btn_33.Name = "btn_33";
             this.btn_33.Size = new System.Drawing.Size(100, 100);
             this.btn_33.TabIndex = 21;
@@ -291,7 +295,7 @@
             // 
             // btn_32
             // 
-            this.btn_32.Location = new System.Drawing.Point(617, 244);
+            this.btn_32.Location = new System.Drawing.Point(363, 235);
             this.btn_32.Name = "btn_32";
             this.btn_32.Size = new System.Drawing.Size(100, 100);
             this.btn_32.TabIndex = 20;
@@ -301,7 +305,7 @@
             // 
             // btn_31
             // 
-            this.btn_31.Location = new System.Drawing.Point(617, 138);
+            this.btn_31.Location = new System.Drawing.Point(363, 129);
             this.btn_31.Name = "btn_31";
             this.btn_31.Size = new System.Drawing.Size(100, 100);
             this.btn_31.TabIndex = 19;
@@ -311,7 +315,7 @@
             // 
             // btn_30
             // 
-            this.btn_30.Location = new System.Drawing.Point(617, 32);
+            this.btn_30.Location = new System.Drawing.Point(363, 23);
             this.btn_30.Name = "btn_30";
             this.btn_30.Size = new System.Drawing.Size(100, 100);
             this.btn_30.TabIndex = 18;
@@ -321,7 +325,7 @@
             // 
             // btn_45
             // 
-            this.btn_45.Location = new System.Drawing.Point(723, 562);
+            this.btn_45.Location = new System.Drawing.Point(469, 553);
             this.btn_45.Name = "btn_45";
             this.btn_45.Size = new System.Drawing.Size(100, 100);
             this.btn_45.TabIndex = 29;
@@ -331,7 +335,7 @@
             // 
             // btn_44
             // 
-            this.btn_44.Location = new System.Drawing.Point(723, 456);
+            this.btn_44.Location = new System.Drawing.Point(469, 447);
             this.btn_44.Name = "btn_44";
             this.btn_44.Size = new System.Drawing.Size(100, 100);
             this.btn_44.TabIndex = 28;
@@ -341,7 +345,7 @@
             // 
             // btn_43
             // 
-            this.btn_43.Location = new System.Drawing.Point(723, 350);
+            this.btn_43.Location = new System.Drawing.Point(469, 341);
             this.btn_43.Name = "btn_43";
             this.btn_43.Size = new System.Drawing.Size(100, 100);
             this.btn_43.TabIndex = 27;
@@ -351,7 +355,7 @@
             // 
             // btn_42
             // 
-            this.btn_42.Location = new System.Drawing.Point(723, 244);
+            this.btn_42.Location = new System.Drawing.Point(469, 235);
             this.btn_42.Name = "btn_42";
             this.btn_42.Size = new System.Drawing.Size(100, 100);
             this.btn_42.TabIndex = 26;
@@ -361,7 +365,7 @@
             // 
             // btn_41
             // 
-            this.btn_41.Location = new System.Drawing.Point(723, 138);
+            this.btn_41.Location = new System.Drawing.Point(469, 129);
             this.btn_41.Name = "btn_41";
             this.btn_41.Size = new System.Drawing.Size(100, 100);
             this.btn_41.TabIndex = 25;
@@ -371,7 +375,7 @@
             // 
             // btn_40
             // 
-            this.btn_40.Location = new System.Drawing.Point(723, 32);
+            this.btn_40.Location = new System.Drawing.Point(469, 23);
             this.btn_40.Name = "btn_40";
             this.btn_40.Size = new System.Drawing.Size(100, 100);
             this.btn_40.TabIndex = 24;
@@ -381,7 +385,7 @@
             // 
             // btn_55
             // 
-            this.btn_55.Location = new System.Drawing.Point(829, 562);
+            this.btn_55.Location = new System.Drawing.Point(575, 553);
             this.btn_55.Name = "btn_55";
             this.btn_55.Size = new System.Drawing.Size(100, 100);
             this.btn_55.TabIndex = 35;
@@ -391,7 +395,7 @@
             // 
             // btn_54
             // 
-            this.btn_54.Location = new System.Drawing.Point(829, 456);
+            this.btn_54.Location = new System.Drawing.Point(575, 447);
             this.btn_54.Name = "btn_54";
             this.btn_54.Size = new System.Drawing.Size(100, 100);
             this.btn_54.TabIndex = 34;
@@ -401,7 +405,7 @@
             // 
             // btn_53
             // 
-            this.btn_53.Location = new System.Drawing.Point(829, 350);
+            this.btn_53.Location = new System.Drawing.Point(575, 341);
             this.btn_53.Name = "btn_53";
             this.btn_53.Size = new System.Drawing.Size(100, 100);
             this.btn_53.TabIndex = 33;
@@ -411,7 +415,7 @@
             // 
             // btn_52
             // 
-            this.btn_52.Location = new System.Drawing.Point(829, 244);
+            this.btn_52.Location = new System.Drawing.Point(575, 235);
             this.btn_52.Name = "btn_52";
             this.btn_52.Size = new System.Drawing.Size(100, 100);
             this.btn_52.TabIndex = 32;
@@ -421,7 +425,7 @@
             // 
             // btn_51
             // 
-            this.btn_51.Location = new System.Drawing.Point(829, 138);
+            this.btn_51.Location = new System.Drawing.Point(575, 129);
             this.btn_51.Name = "btn_51";
             this.btn_51.Size = new System.Drawing.Size(100, 100);
             this.btn_51.TabIndex = 31;
@@ -431,7 +435,7 @@
             // 
             // btn_50
             // 
-            this.btn_50.Location = new System.Drawing.Point(829, 32);
+            this.btn_50.Location = new System.Drawing.Point(575, 23);
             this.btn_50.Name = "btn_50";
             this.btn_50.Size = new System.Drawing.Size(100, 100);
             this.btn_50.TabIndex = 30;
@@ -441,7 +445,7 @@
             // 
             // btn_65
             // 
-            this.btn_65.Location = new System.Drawing.Point(935, 562);
+            this.btn_65.Location = new System.Drawing.Point(681, 553);
             this.btn_65.Name = "btn_65";
             this.btn_65.Size = new System.Drawing.Size(100, 100);
             this.btn_65.TabIndex = 41;
@@ -451,7 +455,7 @@
             // 
             // btn_64
             // 
-            this.btn_64.Location = new System.Drawing.Point(935, 456);
+            this.btn_64.Location = new System.Drawing.Point(681, 447);
             this.btn_64.Name = "btn_64";
             this.btn_64.Size = new System.Drawing.Size(100, 100);
             this.btn_64.TabIndex = 40;
@@ -461,7 +465,7 @@
             // 
             // btn_63
             // 
-            this.btn_63.Location = new System.Drawing.Point(935, 350);
+            this.btn_63.Location = new System.Drawing.Point(681, 341);
             this.btn_63.Name = "btn_63";
             this.btn_63.Size = new System.Drawing.Size(100, 100);
             this.btn_63.TabIndex = 39;
@@ -471,7 +475,7 @@
             // 
             // btn_62
             // 
-            this.btn_62.Location = new System.Drawing.Point(935, 244);
+            this.btn_62.Location = new System.Drawing.Point(681, 235);
             this.btn_62.Name = "btn_62";
             this.btn_62.Size = new System.Drawing.Size(100, 100);
             this.btn_62.TabIndex = 38;
@@ -481,7 +485,7 @@
             // 
             // btn_61
             // 
-            this.btn_61.Location = new System.Drawing.Point(935, 138);
+            this.btn_61.Location = new System.Drawing.Point(681, 129);
             this.btn_61.Name = "btn_61";
             this.btn_61.Size = new System.Drawing.Size(100, 100);
             this.btn_61.TabIndex = 37;
@@ -491,7 +495,7 @@
             // 
             // btn_60
             // 
-            this.btn_60.Location = new System.Drawing.Point(935, 32);
+            this.btn_60.Location = new System.Drawing.Point(681, 23);
             this.btn_60.Name = "btn_60";
             this.btn_60.Size = new System.Drawing.Size(100, 100);
             this.btn_60.TabIndex = 36;
@@ -519,6 +523,28 @@
             this.panel1.Size = new System.Drawing.Size(242, 740);
             this.panel1.TabIndex = 43;
             // 
+            // lbl_p2Turn
+            // 
+            this.lbl_p2Turn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_p2Turn.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.lbl_p2Turn.Location = new System.Drawing.Point(3, 134);
+            this.lbl_p2Turn.Name = "lbl_p2Turn";
+            this.lbl_p2Turn.Size = new System.Drawing.Size(236, 30);
+            this.lbl_p2Turn.TabIndex = 2;
+            this.lbl_p2Turn.Text = "Player 2\'s Turn";
+            this.lbl_p2Turn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_p1Turn
+            // 
+            this.lbl_p1Turn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_p1Turn.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.lbl_p1Turn.Location = new System.Drawing.Point(3, 82);
+            this.lbl_p1Turn.Name = "lbl_p1Turn";
+            this.lbl_p1Turn.Size = new System.Drawing.Size(236, 30);
+            this.lbl_p1Turn.TabIndex = 1;
+            this.lbl_p1Turn.Text = "Player 1\'s Turn";
+            this.lbl_p1Turn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // lbl_turnNum
             // 
             this.lbl_turnNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -539,27 +565,75 @@
             this.btn_exit.UseVisualStyleBackColor = true;
             this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
             // 
-            // lbl_p1Turn
+            // panel_gamePanel
             // 
-            this.lbl_p1Turn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_p1Turn.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.lbl_p1Turn.Location = new System.Drawing.Point(3, 82);
-            this.lbl_p1Turn.Name = "lbl_p1Turn";
-            this.lbl_p1Turn.Size = new System.Drawing.Size(236, 30);
-            this.lbl_p1Turn.TabIndex = 1;
-            this.lbl_p1Turn.Text = "Player 1\'s Turn";
-            this.lbl_p1Turn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.panel_gamePanel.Controls.Add(this.lbl_winner);
+            this.panel_gamePanel.Controls.Add(this.btn_65);
+            this.panel_gamePanel.Controls.Add(this.btn_64);
+            this.panel_gamePanel.Controls.Add(this.btn_63);
+            this.panel_gamePanel.Controls.Add(this.btn_62);
+            this.panel_gamePanel.Controls.Add(this.btn_61);
+            this.panel_gamePanel.Controls.Add(this.btn_60);
+            this.panel_gamePanel.Controls.Add(this.btn_55);
+            this.panel_gamePanel.Controls.Add(this.btn_54);
+            this.panel_gamePanel.Controls.Add(this.btn_53);
+            this.panel_gamePanel.Controls.Add(this.btn_52);
+            this.panel_gamePanel.Controls.Add(this.btn_51);
+            this.panel_gamePanel.Controls.Add(this.btn_50);
+            this.panel_gamePanel.Controls.Add(this.btn_45);
+            this.panel_gamePanel.Controls.Add(this.btn_44);
+            this.panel_gamePanel.Controls.Add(this.btn_43);
+            this.panel_gamePanel.Controls.Add(this.btn_42);
+            this.panel_gamePanel.Controls.Add(this.btn_41);
+            this.panel_gamePanel.Controls.Add(this.btn_40);
+            this.panel_gamePanel.Controls.Add(this.btn_35);
+            this.panel_gamePanel.Controls.Add(this.btn_34);
+            this.panel_gamePanel.Controls.Add(this.btn_33);
+            this.panel_gamePanel.Controls.Add(this.btn_32);
+            this.panel_gamePanel.Controls.Add(this.btn_31);
+            this.panel_gamePanel.Controls.Add(this.btn_30);
+            this.panel_gamePanel.Controls.Add(this.btn_25);
+            this.panel_gamePanel.Controls.Add(this.btn_24);
+            this.panel_gamePanel.Controls.Add(this.btn_23);
+            this.panel_gamePanel.Controls.Add(this.btn_22);
+            this.panel_gamePanel.Controls.Add(this.btn_21);
+            this.panel_gamePanel.Controls.Add(this.btn_20);
+            this.panel_gamePanel.Controls.Add(this.btn_15);
+            this.panel_gamePanel.Controls.Add(this.btn_14);
+            this.panel_gamePanel.Controls.Add(this.btn_13);
+            this.panel_gamePanel.Controls.Add(this.btn_12);
+            this.panel_gamePanel.Controls.Add(this.btn_11);
+            this.panel_gamePanel.Controls.Add(this.btn_10);
+            this.panel_gamePanel.Controls.Add(this.btn_05);
+            this.panel_gamePanel.Controls.Add(this.btn_04);
+            this.panel_gamePanel.Controls.Add(this.btn_03);
+            this.panel_gamePanel.Controls.Add(this.btn_02);
+            this.panel_gamePanel.Controls.Add(this.btn_01);
+            this.panel_gamePanel.Controls.Add(this.btn_00);
+            this.panel_gamePanel.Location = new System.Drawing.Point(254, 9);
+            this.panel_gamePanel.Name = "panel_gamePanel";
+            this.panel_gamePanel.Size = new System.Drawing.Size(826, 680);
+            this.panel_gamePanel.TabIndex = 45;
             // 
-            // lbl_p2Turn
+            // lbl_winner
             // 
-            this.lbl_p2Turn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_p2Turn.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.lbl_p2Turn.Location = new System.Drawing.Point(3, 134);
-            this.lbl_p2Turn.Name = "lbl_p2Turn";
-            this.lbl_p2Turn.Size = new System.Drawing.Size(236, 30);
-            this.lbl_p2Turn.TabIndex = 2;
-            this.lbl_p2Turn.Text = "Player 2\'s Turn";
-            this.lbl_p2Turn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_winner.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_winner.Location = new System.Drawing.Point(45, 307);
+            this.lbl_winner.Name = "lbl_winner";
+            this.lbl_winner.Size = new System.Drawing.Size(736, 77);
+            this.lbl_winner.TabIndex = 42;
+            this.lbl_winner.Text = "Player # Wins!";
+            this.lbl_winner.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(830, 691);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(119, 34);
+            this.button1.TabIndex = 46;
+            this.button1.Text = "Exit to Menu";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Board_2Player
             // 
@@ -567,57 +641,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CornflowerBlue;
             this.ClientSize = new System.Drawing.Size(1086, 737);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.panel_gamePanel);
             this.Controls.Add(this.btn_exit);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btn_65);
-            this.Controls.Add(this.btn_64);
-            this.Controls.Add(this.btn_63);
-            this.Controls.Add(this.btn_62);
-            this.Controls.Add(this.btn_61);
-            this.Controls.Add(this.btn_60);
-            this.Controls.Add(this.btn_55);
-            this.Controls.Add(this.btn_54);
-            this.Controls.Add(this.btn_53);
-            this.Controls.Add(this.btn_52);
-            this.Controls.Add(this.btn_51);
-            this.Controls.Add(this.btn_50);
-            this.Controls.Add(this.btn_45);
-            this.Controls.Add(this.btn_44);
-            this.Controls.Add(this.btn_43);
-            this.Controls.Add(this.btn_42);
-            this.Controls.Add(this.btn_41);
-            this.Controls.Add(this.btn_40);
-            this.Controls.Add(this.btn_35);
-            this.Controls.Add(this.btn_34);
-            this.Controls.Add(this.btn_33);
-            this.Controls.Add(this.btn_32);
-            this.Controls.Add(this.btn_31);
-            this.Controls.Add(this.btn_30);
-            this.Controls.Add(this.btn_25);
-            this.Controls.Add(this.btn_24);
-            this.Controls.Add(this.btn_23);
-            this.Controls.Add(this.btn_22);
-            this.Controls.Add(this.btn_21);
-            this.Controls.Add(this.btn_20);
-            this.Controls.Add(this.btn_15);
-            this.Controls.Add(this.btn_14);
-            this.Controls.Add(this.btn_13);
-            this.Controls.Add(this.btn_12);
-            this.Controls.Add(this.btn_11);
-            this.Controls.Add(this.btn_10);
-            this.Controls.Add(this.btn_05);
-            this.Controls.Add(this.btn_04);
-            this.Controls.Add(this.btn_03);
-            this.Controls.Add(this.btn_02);
-            this.Controls.Add(this.btn_01);
-            this.Controls.Add(this.btn_00);
             this.Name = "Board_2Player";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Board_2Player";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.form_close);
             this.Load += new System.EventHandler(this.Board_2Player_Load);
             this.panel1.ResumeLayout(false);
+            this.panel_gamePanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -673,5 +708,8 @@
         private System.Windows.Forms.Label lbl_turnNum;
         private System.Windows.Forms.Label lbl_p2Turn;
         private System.Windows.Forms.Label lbl_p1Turn;
+        private System.Windows.Forms.Panel panel_gamePanel;
+        private System.Windows.Forms.Label lbl_winner;
+        private System.Windows.Forms.Button button1;
     }
 }
