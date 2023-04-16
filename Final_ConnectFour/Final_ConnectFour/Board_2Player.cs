@@ -39,6 +39,7 @@ namespace Final_ConnectFour
                 Console.WriteLine(button.Tag);
                 button.Text = "";
             }
+            label1.Hide();
             
 
         }
