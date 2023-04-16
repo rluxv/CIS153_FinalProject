@@ -74,16 +74,16 @@ namespace Final_ConnectFour
             lbl_turnNum.Text = "Turn " + turns;
         }
 
-
+        
         private bool checkWin(int p)
         {
             // vertical check
-            for (int c = 0; c < 7; c++)
+            for(int c = 0; c < 7; c++)
             {
                 int count = 0;
-                for (int r = 0; r < 6; r++)
+                for(int r = 0; r < 6; r++)
                 {
-                    if (board.getCell(c, r).getToken() == p)
+                    if(board.getCell(c, r).getToken() == p)
                     {
                         Console.WriteLine("token found: " + c + ", " + r);
                         count++;
@@ -93,7 +93,7 @@ namespace Final_ConnectFour
                         count = 0;
                     }
                 }
-                if (count == 4)
+                if(count == 4)
                 {
                     return true;
                 }
