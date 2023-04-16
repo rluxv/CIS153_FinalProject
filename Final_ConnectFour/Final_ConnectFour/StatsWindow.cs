@@ -15,6 +15,10 @@ namespace Final_ConnectFour
         public StatsWindow()
         {
             InitializeComponent();
+
+            Stats stats = new Stats();
+            stats.Deserialize();
+            lbl_gamesPlayed.Text = stats.gamesPlayedCount + "";
         }
 
         private void StatsWindow_Load(object sender, EventArgs e)

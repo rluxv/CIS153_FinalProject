@@ -206,6 +206,13 @@ namespace Final_ConnectFour
             lbl_p2Turn.Font = new Font(lbl_p1Turn.Font, FontStyle.Regular);
             lbl_p1Turn.ForeColor = Color.Gray;
             lbl_p1Turn.Font = new Font(lbl_p1Turn.Font, FontStyle.Regular);
+
+            Stats stats = new Stats();
+            stats.Deserialize();
+            stats.gamesPlayedCount++;
+            stats.playerWinCount++;
+            stats.Serialize();
+
         }
 
         private void form_close(object sender, FormClosedEventArgs e)

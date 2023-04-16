@@ -24,9 +24,6 @@ namespace Final_ConnectFour
 
         private void btn_viewStats_Click(object sender, EventArgs e)
         {
-            Stats st = new Stats();
-            st.initialize();
-
             StatsWindow statsWindow = new StatsWindow();
             statsWindow.Show();
 
