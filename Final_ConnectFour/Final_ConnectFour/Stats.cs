@@ -39,10 +39,10 @@ namespace Final_ConnectFour
 
         public void Deserialize()
         {
-            XmlDocument statsDoc = new XmlDocument();
+            //XmlDocument statsDoc = new XmlDocument();
             try
             {
-                statsDoc.Load("statistics.xml");
+                //statsDoc.Load("statistics.xml");
 
 
                 XmlSerializer serializer = new XmlSerializer(typeof(Stats));
