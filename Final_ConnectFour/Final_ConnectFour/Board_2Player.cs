@@ -122,21 +122,27 @@ namespace Final_ConnectFour
             }
 
             // diagonal check
-            for (int r = 0; r < 3; r++)
+            try
             {
-                for (int c = 0; c < 7; c++)
+                for (int r = 0; r < 3; r++)
                 {
-                    if (board.getCell(c, r).getToken() == p && board.getCell(c + 1, r + 1).getToken() == p &&
-                        board.getCell(c + 2, r + 2).getToken() == p && board.getCell(c + 3, r + 3).getToken() == p)
+                    for (int c = 0; c < 7; c++)
                     {
-                        return true;
-                    }
-                    if (board.getCell(c, r + 3).getToken() == p && board.getCell(c + 1, r + 2).getToken() == p &&
-                        board.getCell(c + 2, r + 1).getToken() == p && board.getCell(c + 3, r).getToken() == p)
-                    {
-                        return true;
+                        if (board.getCell(c, r).getToken() == p && board.getCell(c + 1, r + 1).getToken() == p &&
+                            board.getCell(c + 2, r + 2).getToken() == p && board.getCell(c + 3, r + 3).getToken() == p)
+                        {
+                            return true;
+                        }
+                        if (board.getCell(c, r + 3).getToken() == p && board.getCell(c + 1, r + 2).getToken() == p &&
+                            board.getCell(c + 2, r + 1).getToken() == p && board.getCell(c + 3, r).getToken() == p)
+                        {
+                            return true;
+                        }
                     }
                 }
+            } catch (Exception)
+            {
+
             }
 
             return false;
