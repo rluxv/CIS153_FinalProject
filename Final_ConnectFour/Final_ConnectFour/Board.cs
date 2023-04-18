@@ -30,13 +30,16 @@ namespace Final_ConnectFour
         {
             return numCols;
         }
-        //Maybe I want to be able to get an individual cell from the gameboard given row and col
-        public Cell getCell(int col, int row)
-        {
-            return gameBoard[col, row];
+
+         public Cell getCell(int col, int row)
+		{
+			if (col < numCols && row < numRows)
+			{
+				return gameBoard[col, row];
+			}
+			return null;
         }
 
-        //Maybe we want to be able to view the entire board not just a cell
         public Cell[,] getGameBoard()
         {
             return gameBoard;
