@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Media;
 
 namespace Final_ConnectFour
 {
@@ -198,6 +200,7 @@ namespace Final_ConnectFour
                 //Then places it or places it lower
                 if(board.getCell(col, row).getToken()==0)
                 {
+
                     //Checks if the cell below has a filled out token or not(or is at bottom of row
                     if (row == 5 || board.getCell(col, row + 1).getToken() == 1 || board.getCell(col, row + 1).getToken() == 2 )
                     {
@@ -341,6 +344,14 @@ namespace Final_ConnectFour
                 board.getCell(col, row).setToken(2);
                 btn.BackColor = Color.Red;
             }
+        }
+
+        private void audioClickPlay()
+        {
+            //For sound
+            //Stream soundFile = Properties.Resources.token_click;
+            //SoundPlayer audio = new SoundPlayer(soundFile);
+            //audio.Play();
         }
 
         private void button1_Click(object sender, EventArgs e)
