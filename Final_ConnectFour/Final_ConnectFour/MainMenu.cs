@@ -32,7 +32,7 @@ namespace Final_ConnectFour
 
         private void btn_startSnglPlyr_Click(object sender, EventArgs e)
         {
-            GameScreen board = new GameScreen();
+            Board_1Player board = new Board_1Player();
             this.Hide();
             if (board.ShowDialog() == DialogResult.OK)
             {

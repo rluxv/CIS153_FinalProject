@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace Final_ConnectFour
 {
-    public partial class GameScreen : Form
+    public partial class Board_1Player : Form
     {
         private Board gameBoard;
         private bool isPlayer_turn;
 
-        public GameScreen()
+        public Board_1Player()
         {
             InitializeComponent();
             gameBoard = new Board();
@@ -31,8 +31,9 @@ namespace Final_ConnectFour
             this.Close();
         }
 
+        private void GameScreen_Load(object sender, EventArgs e)
+        {
 
-
-
+        }
     }
 }
