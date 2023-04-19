@@ -39,9 +39,18 @@ namespace Final_ConnectFour
                 Console.WriteLine(button.Tag);
                 button.Text = "";
             }
-            label1.Hide();
-            
 
+            foreach(var btn in panel_gamePanel.Controls.OfType<Button>())
+            {
+                string txt = btn.Tag.ToString();
+
+                int col = int.Parse(txt.Substring(0, 1));
+                int row = int.Parse(txt.Substring(3));
+
+                Cell c = board.getCell(col, row);
+                c.setButton(btn);
+            }
+            label1.Hide();
         }
 
         private void Board_2Player_Load(object sender, EventArgs e)
@@ -183,6 +192,7 @@ namespace Final_ConnectFour
                 Cell c = board.getCell(col, row);
                 Console.WriteLine("Clicked on " + c.getCordCol() + ", " + c.getCordRow());
 
+                Console.WriteLine("Button tag:"+  c.getButton().Tag.ToString());
 
                 //Checks what token is present on the button (0 for nothing, 1 for player 1, 2 for player 2
                 //Then places it or places it lower
@@ -269,6 +279,10 @@ namespace Final_ConnectFour
             lbl_p2Turn.Font = new Font(lbl_p1Turn.Font, FontStyle.Regular);
             lbl_p1Turn.ForeColor = Color.Gray;
             lbl_p1Turn.Font = new Font(lbl_p1Turn.Font, FontStyle.Regular);
+            Stats stats = new Stats();
+            stats.Deserialize();
+            stats.twoplayer_gameTieCount++;
+            stats.Serialize();
         }
         private void winner(int playerWinner)
         {
@@ -282,8 +296,15 @@ namespace Final_ConnectFour
 
             Stats stats = new Stats();
             stats.Deserialize();
-            stats.gamesPlayedCount++;
-            stats.playerWinCount++;
+            stats.twoplayer_gamesPlayedCount++;
+            if(playerWinner == 1)
+            {
+                stats.twoplayer_playerOneWinCount++;
+            }
+            if (playerWinner == 2)
+            {
+                stats.twoplayer_playerTwoWinCount++;
+            }
             stats.Serialize();
         }
 
