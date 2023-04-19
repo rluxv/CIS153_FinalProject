@@ -50,6 +50,10 @@ namespace Final_ConnectFour
                 Cell c = board.getCell(col, row);
                 c.setButton(btn);
             }
+            
+
+
+
             label1.Hide();
         }
 
