@@ -282,6 +282,7 @@ namespace Final_ConnectFour
             Stats stats = new Stats();
             stats.Deserialize();
             stats.twoplayer_gameTieCount++;
+            stats.twoplayer_gamesPlayedCount++;
             stats.Serialize();
         }
         private void winner(int playerWinner)

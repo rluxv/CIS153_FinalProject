@@ -24,8 +24,9 @@ namespace Final_ConnectFour
 
         private void btn_viewStats_Click(object sender, EventArgs e)
         {
-            StatsWindow statsWindow = new StatsWindow();
+            StatsWindow statsWindow = new StatsWindow(this);
             statsWindow.Show();
+            this.Hide();
 
         }
 
@@ -48,6 +49,11 @@ namespace Final_ConnectFour
             Board_2Player board = new Board_2Player(this);
             board.Show();
             this.Hide();
+        }
+
+        private void MainMenu_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

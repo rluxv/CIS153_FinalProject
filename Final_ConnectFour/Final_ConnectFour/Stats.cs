@@ -16,12 +16,22 @@ namespace Final_ConnectFour
         // This breaks the rule of private class members,
         // however XML serialization does not work if the
         // members are private;
-        public int playerWinCount { get; set; }
-        public int computerWinCount { get; set; }
-        public int gameTieCount { get; set; }
-        public int gamesPlayedCount { get; set; }
-        public int playerWinPercentage { get; set; }
-        public int computerWinPercentage { get; set; }
+
+        public int oneplayer_playerWinCount { get; set; }
+        public int oneplayer_computerWinCount { get; set; }
+        public int oneplayer_gameTieCount { get; set; }
+        public int oneplayer_gamesPlayedCount { get; set; }
+        public int oneplayer_playerWinPercentage { get; set; }
+        public int oneplayer_computerWinPercentage { get; set; }
+
+
+        public int twoplayer_playerOneWinCount { get; set; }
+        public int twoplayer_playerTwoWinCount { get; set; }
+        public int twoplayer_gameTieCount { get; set; }
+        public int twoplayer_gamesPlayedCount { get; set; }
+        public int twoplayer_playerOneWinPercentage { get; set; }
+        public int twoplayer_playerTwoWinPercentage { get; set; }
+
 
         public Stats()
         {
@@ -56,12 +66,19 @@ namespace Final_ConnectFour
                     s = (Stats)serializer.Deserialize(reader);
                 }
 
-                playerWinCount = s.playerWinCount;
-                computerWinCount = s.computerWinCount;
-                gameTieCount = s.gameTieCount;
-                gamesPlayedCount = s.gamesPlayedCount;
-                playerWinPercentage = s.playerWinPercentage;
-                computerWinPercentage = s.computerWinPercentage;
+                oneplayer_playerWinCount = s.oneplayer_playerWinCount;
+                oneplayer_computerWinCount = s.oneplayer_computerWinCount;
+                oneplayer_gameTieCount = s.oneplayer_gameTieCount;
+                oneplayer_gamesPlayedCount = s.oneplayer_gamesPlayedCount;
+                oneplayer_playerWinPercentage = s.oneplayer_playerWinPercentage;
+                oneplayer_computerWinPercentage = s.oneplayer_computerWinPercentage;
+
+                twoplayer_playerOneWinCount = s.twoplayer_playerOneWinCount;
+                twoplayer_playerTwoWinCount = s.twoplayer_playerTwoWinCount;
+                twoplayer_gameTieCount = s.twoplayer_gameTieCount;
+                twoplayer_gamesPlayedCount = s.twoplayer_gamesPlayedCount;
+                twoplayer_playerOneWinPercentage = s.twoplayer_playerOneWinPercentage;
+                twoplayer_playerTwoWinPercentage = s.twoplayer_playerTwoWinPercentage;
             }
             catch (FileNotFoundException ex)
             {
