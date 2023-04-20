@@ -249,6 +249,7 @@ namespace Final_ConnectFour
                     if (row == 5 || board.getCell(col, row + 1).getToken() == 1 || board.getCell(col, row + 1).getToken() == 2 )
                     {
                         Console.WriteLine("Placing a disc.");
+                        audioClickPlay();
                         placeDisc(row, col, btn);
 
                         //Switches player after button press
@@ -396,10 +397,11 @@ namespace Final_ConnectFour
         private void audioClickPlay()
         {
             //For sound
-            //Stream soundFile = Properties.Resources.token_click;
-            //SoundPlayer audio = new SoundPlayer(soundFile);
-            //audio.Play();
+            Stream soundFile = Properties.Resources.token_click;
+            SoundPlayer audio = new SoundPlayer(soundFile);
+            audio.Play();
         }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -444,6 +446,11 @@ namespace Final_ConnectFour
         private void btn_mouseLeave(object sender, EventArgs e)
         {
             refreshBoard();
+        }
+
+        private void panel_gamePanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

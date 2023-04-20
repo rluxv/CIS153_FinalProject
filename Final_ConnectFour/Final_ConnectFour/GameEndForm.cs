@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -28,10 +30,14 @@ namespace Final_ConnectFour
             mode = 2;
             this.Text = title;
             mm = main;
-            lbl_winner.Text = "Winner: Player " + winnerNum;
-            if (winnerNum == 0) lbl_winner.Text = "Game Draw";
+            lbl_winner.Text = "Player " + winnerNum + " Wins!";
+            if (winnerNum == 0)
+            {
+                lbl_winner.Text = "Game Draw";
+                audioDraw();
+            }
+            else audioWin();
             lbl_totalTurns.Text = "Total Turns: " + totalMoves;
-
         }
 
         public GameEndForm(Board_1Player onePlayerBoard, string title, MainMenu main)
@@ -43,7 +49,18 @@ namespace Final_ConnectFour
             this.Text = title;
             mm = main;
         }
-
+        private void audioWin()
+        {
+            Stream soundFile = Properties.Resources.win;
+            SoundPlayer audio = new SoundPlayer(soundFile);
+            audio.Play();
+        }
+        private void audioDraw()
+        {
+            Stream soundFile = Properties.Resources.draw;
+            SoundPlayer audio = new SoundPlayer(soundFile);
+            audio.Play();
+        }
         private void button4_Click(object sender, EventArgs e)
         {
             Application.Exit();
