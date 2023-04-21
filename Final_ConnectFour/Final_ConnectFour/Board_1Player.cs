@@ -321,98 +321,85 @@ namespace Final_ConnectFour
 
         private void AIMove()
         {
-            int col = new Random().Next(0, 6);
+            int col = 0;
             int row = 0;
-            Cell c = board.getCell(col, row);
+            Cell c = null;
+
             Button btn = null;
 
-            while (c.getToken() != 0)
+
+            //This section of code will allow a user to click on any button and have the program automatically place a disc at the lowest possible spot in the column they clicked.
+            int i = 0;
+            bool outerLoop = true;
+            while (outerLoop && i < 7)
+            {
+                for (int j = 0; j < 6; j++)
+                {
+                    if (j == 5 || board.getCell(i, j + 1).getToken() == 1 || board.getCell(i, j + 1).getToken() == 2)
+                    {
+                        if (board.getCell(i, j).getToken() == 0)
+                        {
+                            board.getCell(i, j).setToken(1);
+                            if (checkWin(1))
+                            {
+                                c = board.getCell(i, j);
+                                btn = c.getButton();
+                                col = i;
+                                row = j;
+                                outerLoop = false;
+                            }
+                            board.getCell(i, j).setToken(2);
+                            if (checkWin(2))
+                            {
+                                c = board.getCell(i, j);
+                                btn = c.getButton();
+                                col = i;
+                                row = j;
+                                outerLoop = false;
+                            }
+                            board.getCell(i, j).setToken(0);
+                        }
+                    }
+                }
+                i++;
+            }
+
+            if (c == null)
             {
                 col = new Random().Next(0, 6);
                 c = board.getCell(col, row);
+                while (c.getToken() != 0)
+                {
+                    col = new Random().Next(0, 6);
+                    c = board.getCell(col, row);
+                }
+                for (int k = 0; k < 6; k++)
+                {
+
+                    if (board.getCell(col, k).getToken() == 0)
+                    {
+                        c = board.getCell(col, k);
+                        btn = c.getButton();
+                        row = k;
+                    }
+
+                }
             }
 
             Console.WriteLine("Computer Clicked on " + c.getCordCol() + ", " + c.getCordRow());
             Console.WriteLine("Button tag:" + c.getButton().Tag.ToString());
 
-
-            //This section of code will allow a user to click on any button and have the program automatically place a disc at the lowest possible spot in the column they clicked.
-            for (int i = 0; i < 6; i++)
-            {
-
-                if (board.getCell(col, i).getToken() != 0)
-                {
-
-                }
-                else
-                {
-                    c = board.getCell(col, i);
-                    foreach (var vbtn in panel_gamePanel.Controls.OfType<Button>())
-                    {
-                        string txt = vbtn.Tag.ToString();
-                        int col2 = int.Parse(txt.Substring(0, 1));
-                        int row2 = int.Parse(txt.Substring(3));
-                        if (col == col2 && row == row2)
-                        {
-                            btn = vbtn;
-                        }
-                    }
-                    btn = c.getButton();
-                    row = i;
-                }
-
-            }
-
-
             //Checks what token is present on the button (0 for nothing, 1 for player 1, 2 for player 2
             //Then places it or places it lower
             if (board.getCell(col, row).getToken() == 0)
             {
-
                 //Checks if the cell below has a filled out token or not(or is at bottom of row
                 if (row == 5 || board.getCell(col, row + 1).getToken() == 1 || board.getCell(col, row + 1).getToken() == 2)
                 {
                     Console.WriteLine("Placing a disc.");
                     audioClickPlay();
                     placeDisc(row, col, btn);
-
-                    //Switches player after button press
-                    if (player.getPlayerTurn() == 1)
-                    {
-                        player.setPlayerTurn(2);
-                        Console.WriteLine("Player 2 Turn");
-                        AIMove();
-                    }
-                    else if (player.getPlayerTurn() == 2)
-                    {
-                        player.setPlayerTurn(1);
-                        Console.WriteLine("Player 1 Turn");
-                    }
-                    turns++;
                 }
-                ////Goes down and checks every cell below it if there is a token within the cell
-                ////Places token down as far as possible
-                ////Work in Progress
-                //else
-                //{
-                //    int rowCount = 1;
-                //    while (board.getCell(col, row + rowCount).getToken() == 0)
-                //    {
-                //        rowCount++;
-                //        if (row+rowCount == 5)
-                //        {
-                //            placeDisc(row, col, btn);
-                //            break;
-                //        }
-                //        if (board.getCell(col, row + rowCount + 1).getToken() != 0)
-                //        {
-
-                //        }
-                //    }
-                //}
-
-
-                //Errors
             }
             else if (board.getCell(col, row).getToken() == 1)
             {
@@ -426,6 +413,10 @@ namespace Final_ConnectFour
             {
                 Console.WriteLine("ERROR 404: Token not found");
             }
+
+            player.setPlayerTurn(1);
+            Console.WriteLine("Player 1 Turn");
+            turns++;
 
             refreshSidebar();
 
@@ -443,6 +434,57 @@ namespace Final_ConnectFour
             }
 
             refreshBoard();
+        }
+
+        private Cell getAIMove(Board board)
+        {
+            //Check for any moves that would result in an instant win for the AI
+            for (int col = 0; col < board.getNumCols(); col++)
+            {
+                for (int row = 0; row < board.getNumRows(); row++)
+                {
+                    if (board.getCell(col, row).getToken() == 0)
+                    {
+                        board.getCell(col, row).setToken(2);
+                        if (checkWin(2))
+                        {
+                            board.getCell(col, row).setToken(0);
+                            return board.getCell(col, row);
+                        }
+                        board.getCell(col, row).setToken(0);
+                    }
+                }
+            }
+
+            //Check for any moves that would result in a win for the player and block them
+            for (int col = 0; col < board.getNumCols(); col++)
+            {
+                for (int row = 0; row < board.getNumRows(); row++)
+                {
+                    if (board.getCell(col, row).getToken() == 0)
+                    {
+                        board.getCell(col, row).setToken(1);
+                        if (checkWin(1))
+                        {
+                            board.getCell(col, row).setToken(0);
+                            return board.getCell(col, row);
+                        }
+                        board.getCell(col, row).setToken(0);
+                    }
+                }
+            }
+
+            //If no instant wins or blocks are available, make a random move
+            Random rand = new Random();
+            int colIndex = rand.Next(board.getNumCols());
+            Cell cell = board.getCell(colIndex, board.getNumRows() - 1);
+
+            while (cell.getToken() != 0)
+            {
+                colIndex = rand.Next(board.getNumCols());
+                cell = board.getCell(colIndex, board.getNumRows() - 1);
+            }
+            return cell;
         }
 
         private void draw()
