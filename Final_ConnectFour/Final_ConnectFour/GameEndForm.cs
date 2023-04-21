@@ -91,7 +91,10 @@ namespace Final_ConnectFour
         {
             if(mode == 1)
             {
-
+                board_1player.Dispose();
+                board_1player = new Board_1Player(mm);
+                board_1player.Show();
+                this.Close();
             }
             else if(mode == 2)
             {
