@@ -93,7 +93,7 @@ namespace Final_ConnectFour
             {
                 board_2player.Show();
             }
-            this.Close()
+            this.Close();
         }
 
         private void btn_playAgain_Click(object sender, EventArgs e)

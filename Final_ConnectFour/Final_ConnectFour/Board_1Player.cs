@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Media;
+using System.Threading;
 
 namespace Final_ConnectFour
 {
@@ -261,6 +262,7 @@ namespace Final_ConnectFour
                         audioClickPlay();
                         placeDisc(row, col, btn);
 
+
                         //Switches player after button press
                         if (player.getPlayerTurn() == 1)
                         {
@@ -269,26 +271,6 @@ namespace Final_ConnectFour
                         }
                         turns++;
                     }
-                    ////Goes down and checks every cell below it if there is a token within the cell
-                    ////Places token down as far as possible
-                    ////Work in Progress
-                    //else
-                    //{
-                    //    int rowCount = 1;
-                    //    while (board.getCell(col, row + rowCount).getToken() == 0)
-                    //    {
-                    //        rowCount++;
-                    //        if (row+rowCount == 5)
-                    //        {
-                    //            placeDisc(row, col, btn);
-                    //            break;
-                    //        }
-                    //        if (board.getCell(col, row + rowCount + 1).getToken() != 0)
-                    //        {
-
-                    //        }
-                    //    }
-                    //}
 
 
                     //Errors
@@ -321,9 +303,9 @@ namespace Final_ConnectFour
                     draw();
                 }
 
+                wait();
                 AIMove();
                 refreshBoard();
-
             }
         }
 
@@ -371,6 +353,7 @@ namespace Final_ConnectFour
                 }
                 i++;
             }
+
 
             if (c == null)
             {
@@ -421,6 +404,7 @@ namespace Final_ConnectFour
             {
                 Console.WriteLine("ERROR 404: Token not found");
             }
+
 
             player.setPlayerTurn(1);
             Console.WriteLine("Player 1 Turn");
@@ -566,6 +550,7 @@ namespace Final_ConnectFour
                 board.getCell(col, row).setToken(2);
                 btn.BackColor = Color.Red;
             }
+
         }
 
         private void audioClickPlay()
@@ -576,6 +561,11 @@ namespace Final_ConnectFour
             audio.Play();
         }
 
+        //Delays the ai a moment
+        private void wait()
+        {
+            Task.Delay(1000).Wait();
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
