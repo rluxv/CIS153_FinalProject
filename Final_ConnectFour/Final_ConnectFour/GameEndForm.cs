@@ -38,6 +38,10 @@ namespace Final_ConnectFour
             }
             else audioWin();
             lbl_totalTurns.Text = "Total Turns: " + totalMoves;
+            Stats st = new Stats();
+            st.Deserialize();
+            lbl_p1Wins.Text = "Player 1 Wins: " + st.twoplayer_playerOneWinCount;
+            lbl_p2Wins.Text = "Player 2 Wins: " + st.twoplayer_playerTwoWinCount;
         }
 
         public GameEndForm(Board_1Player onePlayerBoard, string title, MainMenu main, int totalMoves, int winnerNum)
@@ -56,6 +60,10 @@ namespace Final_ConnectFour
             else audioWin();
             lbl_totalTurns.Text = "Total Turns: " + totalMoves;
             mm = main;
+            Stats st = new Stats();
+            st.Deserialize();
+            lbl_p1Wins.Text = "Player 1 Wins: " + st.oneplayer_playerWinCount;
+            lbl_p2Wins.Text = "Computer Wins: " + st.oneplayer_computerWinCount;
         }
         private void audioWin()
         {
@@ -76,7 +84,7 @@ namespace Final_ConnectFour
 
         private void btn_reviewBoard_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            
             if(mode == 1)
             {
                 board_1player.Show();
@@ -85,6 +93,7 @@ namespace Final_ConnectFour
             {
                 board_2player.Show();
             }
+            this.Close()
         }
 
         private void btn_playAgain_Click(object sender, EventArgs e)
