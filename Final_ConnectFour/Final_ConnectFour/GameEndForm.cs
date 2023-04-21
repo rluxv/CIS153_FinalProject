@@ -40,13 +40,21 @@ namespace Final_ConnectFour
             lbl_totalTurns.Text = "Total Turns: " + totalMoves;
         }
 
-        public GameEndForm(Board_1Player onePlayerBoard, string title, MainMenu main)
+        public GameEndForm(Board_1Player onePlayerBoard, string title, MainMenu main, int totalMoves, int winnerNum)
         {
             InitializeComponent();
             board_1player = onePlayerBoard;
             board_1player.Hide();
             mode = 1;
             this.Text = title;
+            lbl_winner.Text = title;
+            if (winnerNum == 0)
+            {
+                lbl_winner.Text = "Game Draw";
+                audioDraw();
+            }
+            else audioWin();
+            lbl_totalTurns.Text = "Total Turns: " + totalMoves;
             mm = main;
         }
         private void audioWin()
