@@ -43,8 +43,8 @@ namespace Final_ConnectFour
                 op_cwinpercent = cwc / gpc * 100;
             }
             
-            lbl_oneplayer_playerwinpercent.Text = op_pwinpercent + "%";
-            lbl_oneplayer_computerwinpercent.Text = op_cwinpercent + "%";
+            lbl_oneplayer_playerwinpercent.Text = op_pwinpercent.ToString("#.##") + "%";
+            lbl_oneplayer_computerwinpercent.Text = op_cwinpercent.ToString("#.##") + "%";
 
 
 
@@ -63,8 +63,8 @@ namespace Final_ConnectFour
                 tp_p2winpercent = p2wc / gpc * 100;
             }
 
-            lbl_twoplayer_p1winpercent.Text = tp_p1winpercent + "%";
-            lbl_twoplayer_p2winpercent.Text = tp_p2winpercent + "%";
+            lbl_twoplayer_p1winpercent.Text = tp_p1winpercent.ToString("#.##") + "%";
+            lbl_twoplayer_p2winpercent.Text = tp_p2winpercent.ToString("#.##") + "%";
 
 
         }

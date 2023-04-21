@@ -53,6 +53,7 @@ namespace Final_ConnectFour
                 c.setButton(btn);
             }
             label1.Hide();
+            refreshBoard();
         }
 
         private void Board_2Player_Load(object sender, EventArgs e)
@@ -66,6 +67,13 @@ namespace Final_ConnectFour
 
         private void refreshBoard()
         {
+
+            this.Text = "Connect Four | Player " + player.getPlayerTurn() + "'s Turn | Turn " + turns;
+            if(player.getPlayerTurn() == 2)
+            {
+                this.Text = "Connect Four | Computer's Turn | Turn " + turns;
+            }
+
             foreach (var btn in panel_gamePanel.Controls.OfType<Button>())
             {
                 string txt = btn.Tag.ToString();
