@@ -124,5 +124,10 @@ namespace Final_ConnectFour
         {
 
         }
+
+        private void GameEndForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            mm.Show();
+        }
     }
 }

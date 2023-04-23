@@ -290,18 +290,18 @@ namespace Final_ConnectFour
 
                 refreshSidebar();
 
-                if (checkWin(1))
-                {
-                    winner(1);
-                }
-                else if (checkWin(2))
-                {
-                    winner(2);
-                }
-                else if (isGameDraw())
-                {
-                    draw();
-                }
+                //if (checkWin(1))
+                //{
+                //    winner(1);
+                //}
+                //else if (checkWin(2))
+                //{
+                //    winner(2);
+                //}
+                //else if (isGameDraw())
+                //{
+                //    draw();
+                //}
 
                 wait();
                 AIMove();
