@@ -43,7 +43,7 @@ namespace Final_ConnectFour
                 button.Text = "";
             }
             defaultColor = btn_00.BackColor;
-            foreach(var btn in panel_gamePanel.Controls.OfType<Button>())
+            foreach (var btn in panel_gamePanel.Controls.OfType<Button>())
             {
                 string txt = btn.Tag.ToString();
 
@@ -59,7 +59,7 @@ namespace Final_ConnectFour
 
         private void Board_2Player_Load(object sender, EventArgs e)
         {
-            
+
         }
         private void btn_exit_Click(object sender, EventArgs e)
         {
@@ -79,11 +79,11 @@ namespace Final_ConnectFour
                 int row = int.Parse(txt.Substring(3));
 
                 Cell c = board.getCell(col, row);
-                if(c.getToken() == 1)
+                if (c.getToken() == 1)
                 {
                     btn.BackColor = Color.Yellow;
                 }
-                else if(c.getToken() == 2)
+                else if (c.getToken() == 2)
                 {
                     btn.BackColor = Color.Red;
                 }
@@ -96,7 +96,7 @@ namespace Final_ConnectFour
 
         private void refreshSidebar()
         {
-            if(player.getPlayerTurn() == 1)
+            if (player.getPlayerTurn() == 1)
             {
                 lbl_p1Turn.ForeColor = Color.DarkGreen;
                 lbl_p1Turn.Font = new Font(lbl_p1Turn.Font, FontStyle.Bold);
@@ -124,11 +124,11 @@ namespace Final_ConnectFour
                 for (int row = 0; row < 6; row++)
                 {
                     // if even a single cell has no player token the board is not yet full.
-                    if(board.getCell(col, row).getToken() == 0)
+                    if (board.getCell(col, row).getToken() == 0)
                     {
                         return false;
                     }
-                    
+
                 }
             }
             return true;
@@ -136,12 +136,12 @@ namespace Final_ConnectFour
         private bool checkWin(int p)
         {
             // vertical check
-            for(int c = 0; c < 7; c++)
+            for (int c = 0; c < 7; c++)
             {
                 int count = 0;
-                for(int r = 0; r < 6; r++)
+                for (int r = 0; r < 6; r++)
                 {
-                    if(board.getCell(c, r).getToken() == p)
+                    if (board.getCell(c, r).getToken() == p)
                     {
                         Console.WriteLine("token found: " + c + ", " + r);
                         count++;
@@ -156,7 +156,7 @@ namespace Final_ConnectFour
                         count = 0;
                     }
                 }
-                
+
             }
 
             // horizontal check
@@ -182,29 +182,31 @@ namespace Final_ConnectFour
             }
 
             // diagonal check
-                for (int r = 0; r < 3; r++)
+            for (int r = 0; r < 3; r++)
+            {
+                for (int c = 0; c < 7; c++)
                 {
-                    for (int c = 0; c < 7; c++)
+                    try
                     {
-                        try
+                        if (board.getCell(c, r).getToken() == p && board.getCell(c + 1, r + 1).getToken() == p &&
+                        board.getCell(c + 2, r + 2).getToken() == p && board.getCell(c + 3, r + 3).getToken() == p)
                         {
-                            if (board.getCell(c, r).getToken() == p && board.getCell(c + 1, r + 1).getToken() == p &&
-                            board.getCell(c + 2, r + 2).getToken() == p && board.getCell(c + 3, r + 3).getToken() == p)
-                            {
-                                return true;
-                            }
-                        } catch(Exception) {  }
-
-                        try
-                        {
-                            if (board.getCell(c, r + 3).getToken() == p && board.getCell(c + 1, r + 2).getToken() == p &&
-                            board.getCell(c + 2, r + 1).getToken() == p && board.getCell(c + 3, r).getToken() == p)
-                            {
-                                return true;
-                            }
-                        } catch(Exception) { }
+                            return true;
+                        }
                     }
+                    catch (Exception) { }
+
+                    try
+                    {
+                        if (board.getCell(c, r + 3).getToken() == p && board.getCell(c + 1, r + 2).getToken() == p &&
+                        board.getCell(c + 2, r + 1).getToken() == p && board.getCell(c + 3, r).getToken() == p)
+                        {
+                            return true;
+                        }
+                    }
+                    catch (Exception) { }
                 }
+            }
 
             return false;
         }
@@ -223,14 +225,14 @@ namespace Final_ConnectFour
 
                 Cell c = board.getCell(col, row);
                 Console.WriteLine("Clicked on " + c.getCordCol() + ", " + c.getCordRow());
-                Console.WriteLine("Button tag:"+  c.getButton().Tag.ToString());
+                Console.WriteLine("Button tag:" + c.getButton().Tag.ToString());
 
 
                 //This section of code will allow a user to click on any button and have the program automatically place a disc at the lowest possible spot in the column they clicked.
                 for (int i = 0; i < 6; i++)
                 {
-                    
-                    if(board.getCell(col, i).getToken() != 0)
+
+                    if (board.getCell(col, i).getToken() != 0)
                     {
 
                     }
@@ -240,17 +242,17 @@ namespace Final_ConnectFour
                         btn = c.getButton();
                         row = i;
                     }
-                    
+
                 }
 
 
                 //Checks what token is present on the button (0 for nothing, 1 for player 1, 2 for player 2
                 //Then places it or places it lower
-                if (board.getCell(col, row).getToken()==0)
+                if (board.getCell(col, row).getToken() == 0)
                 {
 
                     //Checks if the cell below has a filled out token or not(or is at bottom of row
-                    if (row == 5 || board.getCell(col, row + 1).getToken() == 1 || board.getCell(col, row + 1).getToken() == 2 )
+                    if (row == 5 || board.getCell(col, row + 1).getToken() == 1 || board.getCell(col, row + 1).getToken() == 2)
                     {
                         Console.WriteLine("Placing a disc.");
                         audioClickPlay();
@@ -291,9 +293,9 @@ namespace Final_ConnectFour
                     //}
 
 
-                //Errors
+                    //Errors
                 }
-                else if (board.getCell(col, row).getToken()==1)
+                else if (board.getCell(col, row).getToken() == 1)
                 {
                     Console.WriteLine("ERROR: Player 1 Token present");
                 }
@@ -308,14 +310,15 @@ namespace Final_ConnectFour
 
                 refreshSidebar();
 
-                if(checkWin(1))
+                if (checkWin(1))
                 {
                     winner(1);
                 }
-                else if(checkWin(2))
+                else if (checkWin(2))
                 {
                     winner(2);
-                } else if(isGameDraw())
+                }
+                else if (isGameDraw())
                 {
                     draw();
                 }
@@ -328,7 +331,6 @@ namespace Final_ConnectFour
         private void draw()
         {
             GameEndForm gef = new GameEndForm(this, "Game Draw", mm, turns, 0);
-            gef.Show();
             panel_gamePanel.Enabled = false;
             lbl_p2Turn.ForeColor = Color.Gray;
             lbl_p2Turn.Font = new Font(lbl_p1Turn.Font, FontStyle.Regular);
@@ -339,11 +341,16 @@ namespace Final_ConnectFour
             stats.twoplayer_gameTieCount++;
             stats.twoplayer_gamesPlayedCount++;
             stats.Serialize();
+            DialogResult res = gef.ShowDialog();
+            if (res == DialogResult.Yes || res == DialogResult.Retry || res == DialogResult.Abort)
+            {
+                this.DialogResult = res;
+                this.Close();
+            }
         }
         private void winner(int playerWinner)
         {
             GameEndForm gef = new GameEndForm(this, "Player " + playerWinner + " Wins!", mm, turns, playerWinner);
-            gef.Show();
             panel_gamePanel.Enabled = false;
             lbl_p2Turn.ForeColor = Color.Gray;
             lbl_p2Turn.Font = new Font(lbl_p1Turn.Font, FontStyle.Regular);
@@ -353,7 +360,7 @@ namespace Final_ConnectFour
             Stats stats = new Stats();
             stats.Deserialize();
             stats.twoplayer_gamesPlayedCount++;
-            if(playerWinner == 1)
+            if (playerWinner == 1)
             {
                 stats.twoplayer_playerOneWinCount++;
             }
@@ -362,11 +369,20 @@ namespace Final_ConnectFour
                 stats.twoplayer_playerTwoWinCount++;
             }
             stats.Serialize();
+            DialogResult res = gef.ShowDialog();
+            if (res == DialogResult.Yes || res == DialogResult.Retry || res == DialogResult.Abort)
+            {
+                this.DialogResult = res;
+                this.Close();
+            }
         }
 
         private void form_close(object sender, FormClosedEventArgs e)
         {
-            mm.Show();
+            if (this.DialogResult != DialogResult.Yes && this.DialogResult != DialogResult.Retry)
+            {
+                this.DialogResult = DialogResult.Abort;
+            }
         }
 
         //public bool columnFull(int col)
@@ -386,12 +402,12 @@ namespace Final_ConnectFour
 
         public void placeDisc(int row, int col, Button btn)
         {
-            if(player.getPlayerTurn() == 1)
+            if (player.getPlayerTurn() == 1)
             {
                 board.getCell(col, row).setToken(1);
                 btn.BackColor = Color.Yellow;
             }
-            else if(player.getPlayerTurn() == 2)
+            else if (player.getPlayerTurn() == 2)
             {
                 board.getCell(col, row).setToken(2);
                 btn.BackColor = Color.Red;
@@ -423,9 +439,9 @@ namespace Final_ConnectFour
                 int col = int.Parse(txt.Substring(0, 1));
                 int row = int.Parse(txt.Substring(3));
 
-                for(int i = 5; i >= 0; i--)
+                for (int i = 5; i >= 0; i--)
                 {
-                    if(board.getCell(col,i).getToken() == 1 || board.getCell(col,i).getToken() == 2)
+                    if (board.getCell(col, i).getToken() == 1 || board.getCell(col, i).getToken() == 2)
                     {
 
                     }

@@ -25,23 +25,55 @@ namespace Final_ConnectFour
         private void btn_viewStats_Click(object sender, EventArgs e)
         {
             StatsWindow statsWindow = new StatsWindow(this);
-            statsWindow.Show();
             this.Hide();
+            if (statsWindow.ShowDialog() == DialogResult.Yes)
+            {
+                this.Show();
+            }
+            else
+            {
+                this.Close();
+            }
 
         }
 
         private void btn_startSnglPlyr_Click(object sender, EventArgs e)
         {
-            Board_1Player board = new Board_1Player(this);
-            board.Show();
-            this.Hide();
+            DialogResult res;
+            do
+            {
+                Board_1Player board = new Board_1Player(this);
+                this.Hide();
+                res = board.ShowDialog();
+                if (res == DialogResult.Yes)
+                {
+                    this.Show();
+                }
+                else if (res == DialogResult.Abort)
+                {
+                    this.Close();
+                }
+            } while (res == DialogResult.Retry);
         }
 
         private void btn_startTwoPlyr_Click(object sender, EventArgs e)
         {
-            Board_2Player board = new Board_2Player(this);
-            board.Show();
-            this.Hide();
+            DialogResult res;
+            do
+            {
+                Board_2Player board = new Board_2Player(this);
+                this.Hide();
+                res = board.ShowDialog();
+                if (res == DialogResult.Yes)
+                {
+                    this.Show();
+                }
+                else if (res == DialogResult.Abort)
+                {
+                    this.Close();
+                }
+            } while (res == DialogResult.Retry);
+
         }
 
         private void MainMenu_Load(object sender, EventArgs e)

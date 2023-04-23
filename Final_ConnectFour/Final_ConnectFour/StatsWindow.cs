@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Final_ConnectFour
 {
-    
+
     public partial class StatsWindow : Form
     {
         private MainMenu mm;
@@ -32,7 +32,7 @@ namespace Final_ConnectFour
             lbl_oneplayer_computerwins.Text = stats.oneplayer_computerWinCount + "";
             lbl_oneplayer_draws.Text = stats.oneplayer_gameTieCount + "";
             lbl_oneplayer_totalgamesplayed.Text = stats.oneplayer_gamesPlayedCount + "";
-            if(stats.oneplayer_gamesPlayedCount != 0)
+            if (stats.oneplayer_gamesPlayedCount != 0)
             {
                 Console.WriteLine(stats.oneplayer_playerWinCount);
                 float wc = stats.oneplayer_playerWinCount;
@@ -42,7 +42,7 @@ namespace Final_ConnectFour
                 op_pwinpercent = wc / gpc * 100;
                 op_cwinpercent = cwc / gpc * 100;
             }
-            
+
             lbl_oneplayer_playerwinpercent.Text = op_pwinpercent.ToString("#.##") + "%";
             lbl_oneplayer_computerwinpercent.Text = op_cwinpercent.ToString("#.##") + "%";
 
@@ -76,12 +76,12 @@ namespace Final_ConnectFour
 
         private void btn_returnToMenu_Click(object sender, EventArgs e)
         {
+            this.DialogResult = DialogResult.Yes;
             this.Close();
         }
 
         private void closeWin(object sender, FormClosedEventArgs e)
         {
-            mm.Show();
         }
     }
 }

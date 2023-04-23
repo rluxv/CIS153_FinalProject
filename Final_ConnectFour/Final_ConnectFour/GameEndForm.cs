@@ -84,39 +84,28 @@ namespace Final_ConnectFour
 
         private void btn_reviewBoard_Click(object sender, EventArgs e)
         {
-            
-            if(mode == 1)
+
+            if (mode == 1)
             {
                 board_1player.Show();
-            } 
-            if(mode == 2)
+            }
+            if (mode == 2)
             {
                 board_2player.Show();
             }
+            this.DialogResult = DialogResult.Ignore;
             this.Close();
         }
 
         private void btn_playAgain_Click(object sender, EventArgs e)
         {
-            if(mode == 1)
-            {
-                board_1player.Dispose();
-                board_1player = new Board_1Player(mm);
-                board_1player.Show();
-                this.Close();
-            }
-            else if(mode == 2)
-            {
-                board_2player.Dispose();
-                board_2player = new Board_2Player(mm);
-                board_2player.Show();
-                this.Close();
-            }
+            this.DialogResult = DialogResult.Retry;
+            this.Close();
         }
 
         private void btn_mainMenu_Click(object sender, EventArgs e)
         {
-            mm.Show();
+            this.DialogResult = DialogResult.Yes;
             this.Close();
         }
 
@@ -125,9 +114,12 @@ namespace Final_ConnectFour
 
         }
 
-        private void GameEndForm_FormClosed(object sender, FormClosedEventArgs e)
+        private void GameEndForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            mm.Show();
+            if (this.DialogResult != DialogResult.Yes && this.DialogResult != DialogResult.Retry && this.DialogResult != DialogResult.Ignore)
+            {
+                this.DialogResult = DialogResult.Abort;
+            }
         }
     }
 }
